@@ -3,17 +3,23 @@
 using namespace std;
 int main() {
 	int n;
+	const int size = 10;
 	setlocale(LC_ALL, "ru");
 	cout << "Введите размер масива:";
 	cin >> n;
-	int a[10];
-	if ((n < 1) || (n > 10)) {
+	int a[size];
+	if ((n < 1) || (n > size)) {
 		cout << "Ошибка, неверный размер масива";
 		return 1;
 	}
-	for (int i = 0, a1; i < n; i++)cout << "Введите элемент масива:",cin >> a1, a[i] = a1;
-	for (int j = 0, b[10]; j < n-1; j++) {
-		b[j] = a[j + 1], cout << b[j];
+	for (int i = 0, a1; i < n; i++) {
+		cout << "Введите элемент масива:";
+		cin >> a[i];
 	}
-	cout << 0;
-}
+	for (int i = 1; i < n; i++) {
+		a[i - 1] = a[i];
+		cout << a[i - 1];
+	}
+	a[size-1] = 0;
+	cout << a[size-1];
+}  

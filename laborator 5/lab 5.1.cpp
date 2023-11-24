@@ -8,21 +8,20 @@ int main() {
 	const int SIZE = 10;
 	int n;
 	int count = 0;
-	double x , a1;
+	double x;
 	cout << "Введите количество элементов массива";
 	cin >> n;
-	if (((1 > n) || (n > 10))) {
+	if (((1 > n) || (n > SIZE))) {
 		cout << "Ошибка, неверный размер масива";
 		return 1;
 	}
-	int a[SIZE];
+	double a[SIZE];
 	cout << "Введите первый элемент масива:";
 	cin >> x;
 	a[0] = x;
 	for (int i = 1; i < n; i++) {
 		cout << "\nВведите следующий элемент масива:";
-		cin >> a1;
-		a[i] = a1;
+		cin >> a[i];
 		if (a[i - 1] > a[i]) {
 			cout <<
 				"Порядковый номер:"<<(i);
